@@ -453,3 +453,7 @@
 03/04 21:49:41 EasyPHP MySqlSutdown event = MySQLShutdown19196
 03/04 21:49:41 EasyPHP MySqlSutdown event open fail = 2
 03/04 21:49:41 EasyPHP End EasyPHP...
+06/04 11:53:10 EasyPHP EasyPHP Servers starting
+06/04 11:53:10 EasyPHP Apache CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
+06/04 11:53:10 EasyPHP CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\my.ini" --language=english"
+06/04 11:53:15 EasyPHP EasyPHP Check version

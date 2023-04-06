@@ -355,3 +355,4 @@
 [Thu Apr 06 11:53:11.772548 2023] [mpm_winnt:notice] [pid 4368:tid 620] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
 [Thu Apr 06 11:53:11.772548 2023] [core:notice] [pid 4368:tid 620] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
 [Thu Apr 06 11:53:11.781529 2023] [mpm_winnt:notice] [pid 4368:tid 620] AH00418: Parent: Created child process 23660
+[Thu Apr 06 11:53:12.220321 2023] [mpm_winnt:notice] [pid 23660:tid 672] AH00354: Child: Starting 64 worker threads.
