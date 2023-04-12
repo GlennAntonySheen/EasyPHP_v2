@@ -17,47 +17,47 @@ class Main extends CI_Controller {
 		$this->load->view('home');
 	}
 	
-	public function orders()
+	public function area()
 	{	
 		$this->load->view('header');
 		$crud = new grocery_CRUD();
 		$crud->set_theme('datatables');
 		
 		//table name exact from database
-		$crud->set_table('orders');
+		$crud->set_table('area');
 		
 		//give focus on name used for operations e.g. Add Order, Delete Order
-		$crud->set_subject('Order');
+		$crud->set_subject('Area');
 		
 		//the columns function lists attributes you see on frontend view of the table
-		$crud->columns('invoiceNo', 'date', 'custID', 'items');
+		$crud->columns('area_id', 'council_id', 'postcode', 'street_name');
 	
 		//the fields function lists attributes to see on add/edit forms.
 		//Note no inclusion of invoiceNo as this is auto-incrementing
-		$crud->fields('date', 'custID', 'items');
+		$crud->fields('council_id', 'postcode', 'street_name');
 		
 		//set the foreign keys to appear as drop-down menus
 		// ('this fk column','referencing table', 'column in referencing table')
-		$crud->set_relation('custID','customers','custID');
+		$crud->set_relation('council_id','local_council','council_name');
 		
 		//many-to-many relationship with link table see grocery crud website: www.grocerycrud.com/examples/set_a_relation_n_n
 		//('give a new name to related column for list in fields here', 'join table', 'other parent table', 'this fk in join table', 'other fk in join table', 'other parent table's viewable column to see in field')
-		$crud->set_relation_n_n('items', 'order_items', 'items', 'invoice_no', 'item_id', 'itemDesc');
+		// $crud->set_relation_n_n('items', 'order_items', 'items', 'invoice_no', 'item_id', 'itemDesc');
 		
 		//form validation (could match database columns set to "not null")
-		$crud->required_fields('invoiceNo', 'date', 'custID');
+		// $crud->required_fields('invoiceNo', 'date', 'custID');
 		
 		//change column heading name for readability ('columm name', 'name to display in frontend column header')
-		$crud->display_as('custID', 'CustomerID');
+		$crud->display_as('council_id', 'Council ');
 		
 		$output = $crud->render();
-		$this->orders_output($output);
+		$this->area_output($output);
 	}
 	
-	function orders_output($output = null)
+	function area_output($output = null)
 	{
 		//this function links up to corresponding page in the views folder to display content for this table
-		$this->load->view('orders_view.php', $output);
+		$this->load->view('area_view.php', $output);
 	}
 
 	public function items()

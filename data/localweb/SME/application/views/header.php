@@ -17,7 +17,7 @@
 	<div>
 		<ul id="nav">
 		<li><a href='<?php echo site_url('')?>'>Home</a></li>
-		<li><a href='<?php echo site_url('main/orders')?>'>Orders</a></li>
+		<li><a href='<?php echo site_url('main/area')?>'>Area</a></li>
 		<li><a href='<?php echo site_url('main/items')?>'>Items</a></li>
 		<li><a href='<?php echo site_url('main/customers')?>'>Customers</a></li>
 		<li><a href='<?php echo site_url('main/orderline')?>'>Order Line</a></li>
