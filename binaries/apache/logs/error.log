@@ -356,3 +356,22 @@
 [Thu Apr 06 11:53:11.772548 2023] [core:notice] [pid 4368:tid 620] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
 [Thu Apr 06 11:53:11.781529 2023] [mpm_winnt:notice] [pid 4368:tid 620] AH00418: Parent: Created child process 23660
 [Thu Apr 06 11:53:12.220321 2023] [mpm_winnt:notice] [pid 23660:tid 672] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 06 16:36:14.285314 2023] [mpm_winnt:crit] [pid 23660:tid 672] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Thu Apr 06 16:36:14.286315 2023] [mpm_winnt:warn] [pid 23660:tid 1568] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Mon Apr 10 23:47:51.126420 2023] [core:warn] [pid 18912:tid 616] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Apr 10 23:47:51.321563 2023] [mpm_winnt:notice] [pid 18912:tid 616] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Mon Apr 10 23:47:51.321563 2023] [mpm_winnt:notice] [pid 18912:tid 616] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Mon Apr 10 23:47:51.321563 2023] [core:notice] [pid 18912:tid 616] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Mon Apr 10 23:47:51.328544 2023] [mpm_winnt:notice] [pid 18912:tid 616] AH00418: Parent: Created child process 24060
+[Mon Apr 10 23:47:51.746960 2023] [mpm_winnt:notice] [pid 24060:tid 680] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 12 11:09:06.965436 2023] [core:warn] [pid 10488:tid 584] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 12 11:09:07.157931 2023] [mpm_winnt:notice] [pid 10488:tid 584] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Wed Apr 12 11:09:07.157931 2023] [mpm_winnt:notice] [pid 10488:tid 584] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Wed Apr 12 11:09:07.157931 2023] [core:notice] [pid 10488:tid 584] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Wed Apr 12 11:09:07.164912 2023] [mpm_winnt:notice] [pid 10488:tid 584] AH00418: Parent: Created child process 24448
+[Wed Apr 12 11:09:07.574814 2023] [mpm_winnt:notice] [pid 24448:tid 676] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 12 11:22:40.022556 2023] [:error] [pid 24448:tid 1136] [client 127.0.0.1:61934] PHP Fatal error:  Cannot access empty property in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\libraries\\Grocery_CRUD.php on line 1556, referer: http://localhost:8080/SME/index.php
+[Wed Apr 12 11:28:21.137240 2023] [:error] [pid 24448:tid 1136] [client 127.0.0.1:62048] PHP Fatal error:  Cannot access empty property in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\libraries\\Grocery_CRUD.php on line 1556, referer: http://localhost:8080/SME/index.php
+[Wed Apr 12 11:29:23.473435 2023] [:error] [pid 24448:tid 1136] [client 127.0.0.1:62062] PHP Fatal error:  Cannot access empty property in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\libraries\\Grocery_CRUD.php on line 1556, referer: http://localhost:8080/SME/index.php
+[Wed Apr 12 11:29:25.428331 2023] [:error] [pid 24448:tid 1136] [client 127.0.0.1:62062] PHP Fatal error:  Cannot access empty property in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\libraries\\Grocery_CRUD.php on line 1556, referer: http://localhost:8080/SME/index.php
+[Wed Apr 12 11:29:42.684465 2023] [:error] [pid 24448:tid 1136] [client 127.0.0.1:62067] PHP Fatal error:  Cannot access empty property in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\libraries\\Grocery_CRUD.php on line 1556, referer: http://localhost:8080/SME/index.php
