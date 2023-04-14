@@ -1903,3 +1903,75 @@ InnoDB: Last MySQL binlog file position 0 18322, file name mysql-bin.000046
 2023-04-12 11:09:07 24728 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
 2023-04-12 11:09:07 24728 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
 2023-04-12 11:09:07 24728 [Note] Server socket created on IP: '127.0.0.1'.
+2023-04-12 14:42:14 18516 [Note] Plugin 'FEDERATED' is disabled.
+2023-04-12 14:42:14 18516 [Note] InnoDB: The InnoDB memory heap is disabled
+2023-04-12 14:42:14 18516 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2023-04-12 14:42:14 18516 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2023-04-12 14:42:14 18516 [Note] InnoDB: Not using CPU crc32 instructions
+2023-04-12 14:42:14 18516 [Note] InnoDB: Initializing buffer pool, size = 20.0M
+2023-04-12 14:42:14 18516 [Note] InnoDB: Completed initialization of buffer pool
+2023-04-12 14:42:14 18516 [Note] InnoDB: Highest supported file format is Barracuda.
+2023-04-12 14:42:14 18516 [Note] InnoDB: The log sequence numbers 3732691 and 3732691 in ibdata files do not match the log sequence number 3761751 in the ib_logfiles!
+2023-04-12 14:42:14 18516 [Note] InnoDB: Database was not shutdown normally!
+2023-04-12 14:42:14 18516 [Note] InnoDB: Starting crash recovery.
+2023-04-12 14:42:14 18516 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2023-04-12 14:42:14 18516 [Note] InnoDB: Restoring possible half-written data pages 
+2023-04-12 14:42:14 18516 [Note] InnoDB: from the doublewrite buffer...
+InnoDB: Last MySQL binlog file position 0 18322, file name mysql-bin.000046
+2023-04-12 14:42:14 18516 [Note] InnoDB: 128 rollback segment(s) are active.
+2023-04-12 14:42:14 18516 [Note] InnoDB: Waiting for purge to start
+2023-04-12 14:42:14 18516 [Note] InnoDB: 5.6.15 started; log sequence number 3761751
+2023-04-12 14:42:14 18516 [Note] Recovering after a crash using mysql-bin
+2023-04-12 14:42:14 18516 [Note] Starting crash recovery...
+2023-04-12 14:42:14 18516 [Note] Crash recovery finished.
+2023-04-12 14:42:14 18516 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+2023-04-12 14:42:14 18516 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+2023-04-12 14:42:14 18516 [Note] Server socket created on IP: '127.0.0.1'.
+2023-04-13 11:39:03 3428 [Note] Plugin 'FEDERATED' is disabled.
+2023-04-13 11:39:03 3428 [Note] InnoDB: The InnoDB memory heap is disabled
+2023-04-13 11:39:03 3428 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2023-04-13 11:39:03 3428 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2023-04-13 11:39:03 3428 [Note] InnoDB: Not using CPU crc32 instructions
+2023-04-13 11:39:03 3428 [Note] InnoDB: Initializing buffer pool, size = 20.0M
+2023-04-13 11:39:03 3428 [Note] InnoDB: Completed initialization of buffer pool
+2023-04-13 11:39:03 3428 [Note] InnoDB: Highest supported file format is Barracuda.
+2023-04-13 11:39:03 3428 [Note] InnoDB: The log sequence numbers 3732691 and 3732691 in ibdata files do not match the log sequence number 3761761 in the ib_logfiles!
+2023-04-13 11:39:03 3428 [Note] InnoDB: Database was not shutdown normally!
+2023-04-13 11:39:03 3428 [Note] InnoDB: Starting crash recovery.
+2023-04-13 11:39:03 3428 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2023-04-13 11:39:03 3428 [Note] InnoDB: Restoring possible half-written data pages 
+2023-04-13 11:39:03 3428 [Note] InnoDB: from the doublewrite buffer...
+InnoDB: Last MySQL binlog file position 0 18322, file name mysql-bin.000046
+2023-04-13 11:39:03 3428 [Note] InnoDB: 128 rollback segment(s) are active.
+2023-04-13 11:39:03 3428 [Note] InnoDB: Waiting for purge to start
+2023-04-13 11:39:03 3428 [Note] InnoDB: 5.6.15 started; log sequence number 3761761
+2023-04-13 11:39:03 3428 [Note] Recovering after a crash using mysql-bin
+2023-04-13 11:39:03 3428 [Note] Starting crash recovery...
+2023-04-13 11:39:03 3428 [Note] Crash recovery finished.
+2023-04-13 11:39:03 3428 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+2023-04-13 11:39:03 3428 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+2023-04-13 11:39:03 3428 [Note] Server socket created on IP: '127.0.0.1'.
+2023-04-13 12:32:20 16680 [Note] Plugin 'FEDERATED' is disabled.
+2023-04-13 12:32:20 16680 [Note] InnoDB: The InnoDB memory heap is disabled
+2023-04-13 12:32:20 16680 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2023-04-13 12:32:20 16680 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2023-04-13 12:32:20 16680 [Note] InnoDB: Not using CPU crc32 instructions
+2023-04-13 12:32:20 16680 [Note] InnoDB: Initializing buffer pool, size = 20.0M
+2023-04-13 12:32:20 16680 [Note] InnoDB: Completed initialization of buffer pool
+2023-04-13 12:32:20 16680 [Note] InnoDB: Highest supported file format is Barracuda.
+2023-04-13 12:32:20 16680 [Note] InnoDB: The log sequence numbers 3732691 and 3732691 in ibdata files do not match the log sequence number 3761771 in the ib_logfiles!
+2023-04-13 12:32:20 16680 [Note] InnoDB: Database was not shutdown normally!
+2023-04-13 12:32:20 16680 [Note] InnoDB: Starting crash recovery.
+2023-04-13 12:32:20 16680 [Note] InnoDB: Reading tablespace information from the .ibd files...
+2023-04-13 12:32:20 16680 [Note] InnoDB: Restoring possible half-written data pages 
+2023-04-13 12:32:20 16680 [Note] InnoDB: from the doublewrite buffer...
+InnoDB: Last MySQL binlog file position 0 18322, file name mysql-bin.000046
+2023-04-13 12:32:20 16680 [Note] InnoDB: 128 rollback segment(s) are active.
+2023-04-13 12:32:20 16680 [Note] InnoDB: Waiting for purge to start
+2023-04-13 12:32:20 16680 [Note] InnoDB: 5.6.15 started; log sequence number 3761771
+2023-04-13 12:32:20 16680 [Note] Recovering after a crash using mysql-bin
+2023-04-13 12:32:20 16680 [Note] Starting crash recovery...
+2023-04-13 12:32:20 16680 [Note] Crash recovery finished.
+2023-04-13 12:32:20 16680 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+2023-04-13 12:32:20 16680 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+2023-04-13 12:32:20 16680 [Note] Server socket created on IP: '127.0.0.1'.
