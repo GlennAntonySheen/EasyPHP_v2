@@ -38,11 +38,11 @@ class Main extends CI_Controller
         //the fields function lists attributes to see on add/edit forms.
         //Note no inclusion of invoiceNo as this is auto-incrementing
         $crud->fields('council_id', 'postcode', 'street_name');
-
+        $crud->required_fields('council_id', 'postcode', 'street_name');
         //set the foreign keys to appear as drop-down menus
         // ('this fk column','referencing table', 'column in referencing table')
         $crud->set_relation('council_id', 'local_council', 'council_name');
-
+        $crud->set_rules('postcode', 'Postcode', 'required|min_length[5]|max_length[7]|alpha_numeric');
         //many-to-many relationship with link table see grocery crud website: www.grocerycrud.com/examples/set_a_relation_n_n
         //('give a new name to related column for list in fields here', 'join table', 'other parent table', 'this fk in join table', 'other fk in join table', 'other parent table's viewable column to see in field')
         // $crud->set_relation_n_n('items', 'order_items', 'items', 'invoice_no', 'item_id', 'itemDesc');
@@ -73,15 +73,15 @@ class Main extends CI_Controller
 
         $crud->columns('resident_id', 'area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age', 'resident_status');
         $crud->fields('area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age');
-        $crud->field_type('tittle', 'dropdown', array('1' => 'Mr', '2' => 'Ms', '3' => 'other'));
+        $crud->field_type('tittle','dropdown', array('1' => 'Mr', '2' => 'Ms','3' => 'other'));
         $crud->set_relation('area_id', 'area', 'street_name');
 
         $crud->required_fields('area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age');
         $crud->set_rules('resident_name', 'Resident Name', 'required|min_length[3]');
-        $crud->set_rules('phone_no', 'phone no', 'required|numeric|min_length[11]|max_length[11]');
-        $crud->set_rules('email', 'Email', 'required|valid_email');
-        $crud->set_rules('age', 'Age', 'required|less_than[110]');
-
+        $crud->set_rules('phone_no','phone no', 'required|numeric|min_length[11]|max_length[11]');
+        $crud->set_rules('email','Email', 'required|valid_email');
+        $crud->set_rules('age','Age', 'required|less_than[110]');
+		
         $crud->display_as('area_id', 'Area');
         $crud->display_as('phone_no', 'Phone No(eg:0XXXXXXXXXX)');
 
@@ -93,30 +93,45 @@ class Main extends CI_Controller
     {
         $this->load->view('resident_view.php', $output);
     }
-    public function customers()
+    public function product()
     {
         $this->load->view('header');
         $crud = new grocery_CRUD();
         $crud->set_theme('datatables');
-        $crud->set_table('customers');
-        $crud->set_subject('customer');
-        $crud->fields('custID', 'custName', 'custAddress', 'custTown', 'custPostcode', 'custTel', 'custEmail');
-        $crud->required_fields('custID', 'custName', 'custAddress', 'custTown', 'custPostcode', 'custTel', 'custEmail');
-        $crud->display_as('custID', 'CustomerID');
-        $crud->display_as('custName', 'Name');
-        $crud->display_as('custAddress', 'Address');
-        $crud->display_as('custTown', 'Town');
-        $crud->display_as('custPostcode', 'Postcode');
-        $crud->display_as('custTel', 'Phone');
-        $crud->display_as('custEmail', 'Email');
+        $crud->set_table('product');
+        $crud->set_subject('products');
+
+        $crud->columns('product_id', 'sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
+        $crud->fields('sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
+        $crud->field_type('prod_status','dropdown', array('active' => 'Active', 'inactive' => 'Inactive'));
+        $crud->set_relation('sme_id', 'sme', 'company_name');
+        
+        $crud->required_fields('sme_id','name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
+        $crud->set_rules('description', 'Product Description', 'required|min_length[5]|max_length[250]');
+        $crud->set_rules('length', 'Product Length', 'required|greater_than[0]');
+        $crud->set_rules('breadth', 'Product Breadth', 'required|greater_than[0]');
+        $crud->set_rules('length', 'Product Height', 'required|greater_than[0]');
+        $crud->set_rules('price', 'Product Price', 'required|greater_than[0]');
+
+        
+        $crud->display_as('sme_id', 'Company Name');
+        $crud->display_as('price', 'Price (£)');
+        $crud->display_as('prod_status', 'Product Status');
+        // $crud->display_as('custID', 'CustomerID');
+        // $crud->display_as('custName', 'Name');
+        // $crud->display_as('custAddress', 'Address');
+        // $crud->display_as('custTown', 'Town');
+        // $crud->display_as('custPostcode', 'Postcode');
+        // $crud->display_as('custTel', 'Phone');
+        // $crud->display_as('custEmail', 'Email');
 
         $output = $crud->render();
-        $this->cust_output($output);
+        $this->product_output($output);
     }
 
-    public function cust_output($output = null)
+    public function product_output($output = null)
     {
-        $this->load->view('cust_view.php', $output);
+        $this->load->view('product_view.php', $output);
     }
 
     public function orderline()
