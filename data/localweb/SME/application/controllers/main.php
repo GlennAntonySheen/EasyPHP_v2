@@ -73,15 +73,15 @@ class Main extends CI_Controller
 
         $crud->columns('resident_id', 'area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age', 'resident_status');
         $crud->fields('area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age');
-        $crud->field_type('tittle','dropdown', array('1' => 'Mr', '2' => 'Ms','3' => 'other'));
+        $crud->field_type('tittle', 'dropdown', array('1' => 'Mr', '2' => 'Ms', '3' => 'other'));
         $crud->set_relation('area_id', 'area', 'street_name');
 
         $crud->required_fields('area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age');
         $crud->set_rules('resident_name', 'Resident Name', 'required|min_length[3]');
-        $crud->set_rules('phone_no','phone no', 'required|numeric|min_length[11]|max_length[11]');
-        $crud->set_rules('email','Email', 'required|valid_email');
-        $crud->set_rules('age','Age', 'required|less_than[110]');
-		
+        $crud->set_rules('phone_no', 'phone no', 'required|numeric|min_length[11]|max_length[11]');
+        $crud->set_rules('email', 'Email', 'required|valid_email');
+        $crud->set_rules('age', 'Age', 'required|less_than[110]');
+
         $crud->display_as('area_id', 'Area');
         $crud->display_as('phone_no', 'Phone No(eg:0XXXXXXXXXX)');
 
