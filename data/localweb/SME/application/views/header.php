@@ -1,3 +1,8 @@
+<?php
+// echo "Favorite color is " . $_SESSION["userType"] . ".<br>";
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
