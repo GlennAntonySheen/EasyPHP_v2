@@ -2016,3 +2016,20 @@ InnoDB: Last MySQL binlog file position 0 18322, file name mysql-bin.000046
 2023-04-15 00:41:58 16372 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
 2023-04-15 00:41:58 16372 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
 2023-04-15 00:41:58 16372 [Note] Server socket created on IP: '127.0.0.1'.
+2023-04-15 19:07:27 22988 [Note] Plugin 'FEDERATED' is disabled.
+2023-04-15 19:07:27 22988 [Note] InnoDB: The InnoDB memory heap is disabled
+2023-04-15 19:07:28 22988 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2023-04-15 19:07:28 22988 [Note] InnoDB: Compressed tables use zlib 1.2.3
+2023-04-15 19:07:28 22988 [Note] InnoDB: Not using CPU crc32 instructions
+2023-04-15 19:07:28 22988 [Note] InnoDB: Initializing buffer pool, size = 20.0M
+2023-04-15 19:07:28 22988 [Note] InnoDB: Completed initialization of buffer pool
+2023-04-15 19:07:28 22988 [Note] InnoDB: Highest supported file format is Barracuda.
+2023-04-15 19:07:28 22988 [Note] InnoDB: 128 rollback segment(s) are active.
+2023-04-15 19:07:28 22988 [Note] InnoDB: Waiting for purge to start
+2023-04-15 19:07:28 22988 [Note] InnoDB: 5.6.15 started; log sequence number 3761801
+2023-04-15 19:07:28 22988 [Note] Server hostname (bind-address): '127.0.0.1'; port: 3306
+2023-04-15 19:07:28 22988 [Note]   - '127.0.0.1' resolves to '127.0.0.1';
+2023-04-15 19:07:28 22988 [Note] Server socket created on IP: '127.0.0.1'.
+2023-04-15 19:07:28 22988 [Note] Event Scheduler: Loaded 0 events
+2023-04-15 19:07:28 22988 [Note] C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe: ready for connections.
+Version: '5.6.15-log'  socket: ''  port: 3306  MySQL Community Server (GPL)

@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['data'] = "yourdata";
 $message = "";
 class foo
 {public $name;}
@@ -38,9 +37,12 @@ if (isset($_POST['SubmitButton'])) {
     $result = mysql_query($query);
     $obj = mysql_fetch_object($result, 'foo');
     if ($obj) {
-        echo '<script> sessionStorage.setItem("userType", "' . $obj->userType . '");</script>';
-        var_dump($obj->userType);
-        header('Location: index.php/main/area');
+        echo '<script>localStorage.setItem("userType", "' . $obj->userType . '");</script>';
+        if ($obj->userType == 'admin') {
+            echo '<script>window.location.replace("index.php/main/area");</script>';
+        } elseif ($obj->userType == 'sme') {
+            echo '<script>window.location.replace("index.php/main/product");</script>';
+        }
     } else {
         printf("Invalid username or password : ");
     }
