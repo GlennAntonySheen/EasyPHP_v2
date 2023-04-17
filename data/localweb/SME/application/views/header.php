@@ -10,7 +10,7 @@
         font-size: 14px;
         width: 100%;
         float: left;
-
+        /* position: fixed; */
         margin: 0 0 1em 0;
         padding: 0;
         list-style: none;
@@ -67,7 +67,7 @@
 <script type="text/javascript" defer>
 window.onload = function() {
     var navElement = document.getElementById("nav")
-    var userType = localStorage.getItem("userype")
+    var userType = localStorage.getItem("userType")
     console.log("🚀 ~ file: header.php:71 ~ userType:", userType)
     const box = `<li><a href='main/area'><i class="bi bi-geo"></i>Area</a></li>`;
 
@@ -80,14 +80,13 @@ window.onload = function() {
 
 <body>
     <div>
-
         <ul id="nav">
             <li><a href='<?php echo site_url('') ?>'><i class="bi bi-house"></i>Home</a></li>
 
             <li><a href='<?php echo site_url('main/resident') ?>'><i class="bi bi-people"></i>Resident</a></li>
             <li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-lightbulb"></i>Product</a></li>
             <ul id="rightnav">
-                <li><a href='<?php echo site_url('main/blank') ?>'>Blank Page</a></li>
+                <li><a href='<?php echo site_url('main/blank') ?>'>Sign out</a></li>
             </ul>
         </ul>
     </div>
