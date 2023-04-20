@@ -551,3 +551,58 @@ operable program or batch file.
 [Mon Apr 17 10:46:58.513436 2023] [access_compat:error] [pid 20668:tid 1160] [client 127.0.0.1:53984] AH01797: client denied by server configuration: C:/Users/Administrator/Desktop/EasyPHP_v2/data/localweb/SME/application/views/19018.jpg, referer: http://localhost:8080/SME/index.php
 [Mon Apr 17 10:47:00.789839 2023] [access_compat:error] [pid 20668:tid 1176] [client 127.0.0.1:53995] AH01797: client denied by server configuration: C:/Users/Administrator/Desktop/EasyPHP_v2/data/localweb/SME/application/views/19018.jpg, referer: http://localhost:8080/SME/index.php
 [Mon Apr 17 10:47:29.062190 2023] [access_compat:error] [pid 20668:tid 1176] [client 127.0.0.1:53996] AH01797: client denied by server configuration: C:/Users/Administrator/Desktop/EasyPHP_v2/data/localweb/SME/application/views/19018.jpg, referer: http://localhost:8080/SME/index.php
+[Mon Apr 17 12:14:27.847628 2023] [mpm_winnt:crit] [pid 20668:tid 680] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Mon Apr 17 12:14:27.848625 2023] [mpm_winnt:warn] [pid 20668:tid 2000] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Mon Apr 17 12:15:30.288298 2023] [core:warn] [pid 15696:tid 620] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Apr 17 12:15:30.349135 2023] [mpm_winnt:notice] [pid 15696:tid 620] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Mon Apr 17 12:15:30.349135 2023] [mpm_winnt:notice] [pid 15696:tid 620] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Mon Apr 17 12:15:30.349135 2023] [core:notice] [pid 15696:tid 620] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Mon Apr 17 12:15:30.359110 2023] [mpm_winnt:notice] [pid 15696:tid 620] AH00418: Parent: Created child process 16216
+[Mon Apr 17 12:15:31.051259 2023] [mpm_winnt:notice] [pid 16216:tid 708] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 19 16:08:34.404254 2023] [core:warn] [pid 19952:tid 612] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 19 16:08:34.687507 2023] [mpm_winnt:notice] [pid 19952:tid 612] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Wed Apr 19 16:08:34.687507 2023] [mpm_winnt:notice] [pid 19952:tid 612] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Wed Apr 19 16:08:34.687507 2023] [core:notice] [pid 19952:tid 612] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Wed Apr 19 16:08:34.699474 2023] [mpm_winnt:notice] [pid 19952:tid 612] AH00418: Parent: Created child process 17636
+[Wed Apr 19 16:08:35.245087 2023] [mpm_winnt:notice] [pid 17636:tid 660] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 19 21:17:12.160274 2023] [core:warn] [pid 5128:tid 604] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 19 21:17:12.386670 2023] [mpm_winnt:notice] [pid 5128:tid 604] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Wed Apr 19 21:17:12.386670 2023] [mpm_winnt:notice] [pid 5128:tid 604] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Wed Apr 19 21:17:12.386670 2023] [core:notice] [pid 5128:tid 604] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Wed Apr 19 21:17:12.396643 2023] [mpm_winnt:notice] [pid 5128:tid 604] AH00418: Parent: Created child process 11356
+[Wed Apr 19 21:17:13.081868 2023] [mpm_winnt:notice] [pid 11356:tid 672] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 20 13:03:41.447092 2023] [core:warn] [pid 8:tid 596] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Apr 20 13:03:41.850226 2023] [mpm_winnt:notice] [pid 8:tid 596] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Thu Apr 20 13:03:41.850226 2023] [mpm_winnt:notice] [pid 8:tid 596] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Thu Apr 20 13:03:41.850226 2023] [core:notice] [pid 8:tid 596] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Thu Apr 20 13:03:41.867180 2023] [mpm_winnt:notice] [pid 8:tid 596] AH00418: Parent: Created child process 13616
+[Thu Apr 20 13:03:43.294363 2023] [mpm_winnt:notice] [pid 13616:tid 768] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 20 13:55:21.840453 2023] [:error] [pid 13616:tid 1200] [client 127.0.0.1:51520] PHP Parse error:  syntax error, unexpected '$name' (T_VARIABLE) in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\views\\login.php on line 41, referer: http://localhost:8080/SME/index.php
+[Thu Apr 20 15:14:07.788319 2023] [core:warn] [pid 16808:tid 624] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Apr 20 15:14:07.988782 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Thu Apr 20 15:14:07.988782 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Thu Apr 20 15:14:07.988782 2023] [core:notice] [pid 16808:tid 624] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Thu Apr 20 15:14:07.996761 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00418: Parent: Created child process 18208
+[Thu Apr 20 15:14:08.700006 2023] [mpm_winnt:notice] [pid 18208:tid 664] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 20 15:26:54.716610 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00424: Parent: Received restart signal -- Restarting the server.
+[Thu Apr 20 15:26:54.754508 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Thu Apr 20 15:26:54.754508 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Thu Apr 20 15:26:54.754508 2023] [core:notice] [pid 16808:tid 624] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Thu Apr 20 15:26:54.761489 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00418: Parent: Created child process 22120
+[Thu Apr 20 15:26:55.721715 2023] [mpm_winnt:notice] [pid 22120:tid 664] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 20 15:26:56.730322 2023] [mpm_winnt:notice] [pid 18208:tid 664] AH00364: Child: All worker threads have exited.
+[Thu Apr 20 15:27:20.049990 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00424: Parent: Received restart signal -- Restarting the server.
+[Thu Apr 20 15:27:20.084922 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Thu Apr 20 15:27:20.084922 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Thu Apr 20 15:27:20.084922 2023] [core:notice] [pid 16808:tid 624] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Thu Apr 20 15:27:20.092901 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00418: Parent: Created child process 9600
+[Thu Apr 20 15:27:21.064607 2023] [mpm_winnt:notice] [pid 9600:tid 660] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 20 15:27:22.072282 2023] [mpm_winnt:notice] [pid 22120:tid 664] AH00364: Child: All worker threads have exited.
+[Thu Apr 20 15:27:41.050847 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Thu Apr 20 15:27:43.074467 2023] [mpm_winnt:notice] [pid 9600:tid 660] AH00364: Child: All worker threads have exited.
+[Thu Apr 20 15:27:43.143980 2023] [mpm_winnt:notice] [pid 16808:tid 624] AH00430: Parent: Child process 9600 exited successfully.
+[Thu Apr 20 15:27:49.727937 2023] [mpm_winnt:notice] [pid 16820:tid 652] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Thu Apr 20 15:27:49.727937 2023] [mpm_winnt:notice] [pid 16820:tid 652] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Thu Apr 20 15:27:49.727937 2023] [core:notice] [pid 16820:tid 652] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Thu Apr 20 15:27:49.734918 2023] [mpm_winnt:notice] [pid 16820:tid 652] AH00418: Parent: Created child process 17412
+[Thu Apr 20 15:27:50.137891 2023] [mpm_winnt:notice] [pid 17412:tid 664] AH00354: Child: Starting 64 worker threads.

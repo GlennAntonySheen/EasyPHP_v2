@@ -6,32 +6,42 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <style>
     #nav {
+        display: flex;
+        justify-content: space-between;
         font-family: Arial;
         font-size: 14px;
         width: 100%;
         float: left;
         /* position: fixed; */
         margin: 0 0 1em 0;
-        padding: 0;
-        list-style: none;
         /* background-color: rgb(7, 193, 193); */
     }
 
-    #nav {
-        list-style: none;
-        border: 0;
-    }
-
-    #rightnav {
+    ul {
+        padding: 0;
         list-style: none;
     }
 
-    #nav li {
-        float: left;
+    img {
+        height: 50px;
     }
 
-    #rightnav li {
-        float: right;
+    #leftNav {
+        margin-left: 1rem;
+        background-color: red;
+    }
+
+    #leftNav,
+    #rightNav {
+        display: flex;
+        align-items: center;
+        /* background-color: yellow; */
+    }
+
+    #middleNav {
+        display: flex;
+        align-items: center;
+        /* background-color: pink; */
     }
 
     #nav li a {
@@ -45,19 +55,15 @@
         /* background-color: #fff; */
     }
 
-    #nav li a i {
-        margin: 0 5px;
-    }
-
     #nav li a:hover {
         letter-spacing: 1.2px;
-        color: #007FFF;
-        fill: #007FFF;
+        color: #FF6000;
+        fill: #FF6000;
         cursor: 'context-menu';
         /* background-color: #f2e4d5; */
     }
 
-    #nav a:link,
+    a:link,
     a:visited {
         border-radius: 12px 12px 12px 12px;
     }
@@ -66,14 +72,22 @@
 
 <script type="text/javascript" defer>
 window.onload = function() {
-    var navElement = document.getElementById("nav")
+    var middleNavElement = document.getElementById("middleNav")
+    var rightNavElement = document.getElementById("rightNav")
     var userType = localStorage.getItem("userType")
-    console.log("🚀 ~ file: header.php:71 ~ userType:", userType)
-    const box = `<li><a href='main/area'><i class="bi bi-geo"></i>Area</a></li>`;
 
-    if (userType === "admin") {
-        console.log('first')
-        navElement.innerHTML = navElement.innerHTML + box;
+    // No one is logged in
+    if (userType === null) {
+        middleNavElement.innerHTML = middleNavElement.innerHTML +
+            `<li><a href=''><i class="bi bi-house"></i>Home</a></li>`;
+    } else {
+        // Show sign out button if user is logged
+        rightNavElement.innerHTML = `<li><a href='main/blank'>Sign out</a></li>`
+
+        if (userType === "admin") {
+            middleNavElement.innerHTML = middleNavElement.innerHTML + 
+            `<li><a href='main/area'><i class="bi bi-geo"></i>Area</a></li>`;
+        }
     }
 }
 </script>
@@ -81,12 +95,17 @@ window.onload = function() {
 <body>
     <div>
         <ul id="nav">
-            <li><a href='<?php echo site_url('') ?>'><i class="bi bi-house"></i>Home</a></li>
+            <ul id="leftNav">
+                <img src="assets/images/logo.PNG" alt="">
+            </ul>
+            <ul id="middleNav">
 
-            <li><a href='<?php echo site_url('main/resident') ?>'><i class="bi bi-people"></i>Resident</a></li>
-            <li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-lightbulb"></i>Product</a></li>
-            <ul id="rightnav">
-                <li><a href='<?php echo site_url('main/blank') ?>'>Sign out</a></li>
+
+                <!-- <li><a href='<?php echo site_url('main/resident') ?>'><i class="bi bi-people"></i>Resident</a></li>
+                <li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-lightbulb"></i>Product</a></li> -->
+            </ul>
+            <ul id="rightNav">
+
             </ul>
         </ul>
     </div>

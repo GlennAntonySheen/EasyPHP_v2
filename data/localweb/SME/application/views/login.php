@@ -27,6 +27,32 @@ if (isset($_POST['SubmitSmeSignupBtn'])) {
     }
 }
 
+if (isset($_POST['SubmitResidentSignupBtn'])) {
+    $area_id = $_POST['area'];
+    $title = $_POST['title'];
+    $name = $_POST['name'];
+    $phone_no = $_POST['phone_no'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $age = $_POST['age'];
+    
+    $conn = mysqli_connect('localhost', 'root', '', 'cw2');    
+    
+
+    $qry1 = "INSERT INTO login (email, password, userType) VALUES (\"" . $email . '" , "' . $password . '", ' . '"resident");';
+    if ($conn->query($qry1) === true) {
+        $qry2 = 'INSERT INTO resident (resident_id, area_id, tittle, resident_name, phone_no, email, age, resident_status) VALUES (NULL, ' . $area_id . ' , "' . $title . '", "' . $name . '" , "' . $phone_no . '" , "' . $email . '", ' . $age . ', "active");';
+
+        if ($conn->query($qry2) === true) {
+            echo '<script>alert("Successfully Registered");</script>';
+        } else {
+            echo "Error: " . $qry2 . "<br>" . $conn->error;
+        }
+    } else {
+        echo "Error: " . $qry1 . "<br>" . $conn->error;
+    }
+}
+
 if (isset($_POST['SubmitButton'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -42,6 +68,8 @@ if (isset($_POST['SubmitButton'])) {
             echo '<script>window.location.replace("index.php/main/area");</script>';
         } elseif ($obj->userType == 'sme') {
             echo '<script>window.location.replace("index.php/main/product");</script>';
+        } elseif ($obj->userType == 'resident') {
+            echo '<script>window.location.replace("index.php/main/resident");</script>';
         }
     } else {
         printf("Invalid username or password : ");
@@ -63,19 +91,19 @@ if (isset($_POST['SubmitButton'])) {
     }
 
     .contentWrapper {
-        height: 91vh;
+        height: 89vh;
         display: flex;
         gap: 2rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
     .introSection {
         width: 300px;
         flex: 1;
-    border-radius: 1rem;
-    overflow: hidden;
+        border-radius: 1rem;
+        overflow: hidden;
 
     }
 
@@ -89,7 +117,7 @@ if (isset($_POST['SubmitButton'])) {
 
     .formContainer {
         max-width: 500px;
-        padding: 1rem 2rem;
+        padding: 1rem 3rem;
         display: flex;
         flex-direction: column;
         gap: 3rem;
@@ -118,21 +146,28 @@ if (isset($_POST['SubmitButton'])) {
         /* background-color: red; */
     }
 
-    form {}
+    h2 {
+        padding-left: .5rem;
+        font-family: Arial;
+        color: #333c33;
+    }
 
     label {
         padding-left: .5rem;
     }
 
-    input { 
+    input,
+    select {
         height: 30px;
         padding: 0 .5rem;
-        border: 1.6px solid #EB7A14;
+        border: 1.6px solid #FF6000;
         border-radius: 1rem;
     }
+
     textarea {
         height: 60px;
-        border: 1.6px solid #EB7A14;
+        padding: 0 .5rem;
+        border: 1.6px solid #FF6000;
         border-radius: 1rem;
 
     }
@@ -141,9 +176,10 @@ if (isset($_POST['SubmitButton'])) {
         width: 200px;
         padding: .4rem;
         color: #fff;
-        background: #EB7A14;
-        border:  none;
+        background: #FF6000;
+        border: none;
         cursor: pointer;
+        font-size: 15px;
         -webkit-border-radius: 1rem;
         border-radius: 1rem;
     }
@@ -166,33 +202,8 @@ if (isset($_POST['SubmitButton'])) {
             <img class="coverImg" src="assets/images/19018.jpg" alt="">
         </div>
         <div class="formContainer">
-            <div class="signupForm">
-                <form id="smeSignupForm" action="" method="post">
-                    <?php echo $message; ?>
-                    <div class="inputContainer">
-                        <label for="company_name">Company Name:</label>
-                        <input type="text" id="company_name" name="company_name">
-                    </div>
-                    <div class="inputContainer">
-                        <label for="phone_no">Phone Number:</label>
-                        <input type="tel" id="phone_no" name="phone_no">
-                    </div>
-                    <div class="inputContainer">
-                        <label for="address">Address:</label>
-                        <textarea id="address" name="address"></textarea>
-                    </div>
-                    <div class="inputContainer">
-                        <label for="email">Email:</label>
-                        <input id="email" name="email">
-                    </div>
-                    <div class="inputContainer">
-                        <label for="password">Password:</label>
-                        <input id="password" name="password">
-                    </div>
-                    <input type="submit" name="SubmitSmeSignupBtn" />
-                </form>
-            </div>
             <div class="loginForm">
+                <h2>Login</h2>
                 <form id="loginForm" action="" method="post">
                     <?php echo $message; ?>
                     <div class="inputContainer">
@@ -203,7 +214,86 @@ if (isset($_POST['SubmitButton'])) {
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" required>
                     </div>
-                    <input type="submit" name="SubmitButton" />
+                    <input type="submit" name="SubmitButton" value="Login" />
+                </form>
+            </div>
+            <div class="signupForm">
+                <h2>Register as a Resident</h2>
+                <form id="residentSignupForm" action="" method="post">
+                    <div class="inputContainer">
+                        <label for="area">Area*:</label>
+                        <select name="area" id="area" >
+                            <option value="">Please select one</option>
+                            <?php
+$sql = "SELECT * FROM area;";
+
+$conn = mysqli_connect('localhost', 'root', '', 'cw2');
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<option value="' . $row['area_id'] . '">' . $row['postcode'] . '</option>'; //assuming your table has columns "id" and "name"
+    }
+}
+?>
+                        </select>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="Title">Title*:</label>
+                        <select name="title" id="title" >
+                            <option value="">Please select one</option>
+                            <option value="Mr">Mr</option>;
+                            <option value="Ms">Ms</option>;
+                            <option value="Other">Other</option>;
+                        </select>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="name">Name*:</label>
+                        <input type="text" name="name" id="name" >
+                    </div>
+                    <div class="inputContainer">
+                        <label for="phone_no">Phone Number*:</label>
+                        <input type="tel" id="phone_no" name="phone_no">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="age">Age*:</label>
+                        <input type="number" name="age" id="age" >
+                    </div>
+                    <div class="inputContainer">
+                        <label for="email">Email*:</label>
+                        <input id="email" name="email">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="password">Password*:</label>
+                        <input id="password" name="password">
+                    </div>
+                    <input type="submit" name="SubmitResidentSignupBtn" value="Submit">
+                </form>
+            </div>
+            <div class="signupForm">
+                <h2>Register as a SME</h2>
+                <form id="smeSignupForm" action="" method="post">
+                    <?php echo $message; ?>
+                    <div class="inputContainer">
+                        <label for="company_name">Company Name*:</label>
+                        <input type="text" id="company_name" name="company_name">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="phone_no">Phone Number*:</label>
+                        <input type="tel" id="phone_no" name="phone_no">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="address">Address*:</label>
+                        <textarea id="address" name="address"></textarea>
+                    </div>
+                    <div class="inputContainer">
+                        <label for="email">Email*:</label>
+                        <input id="email" name="email">
+                    </div>
+                    <div class="inputContainer">
+                        <label for="password">Password*:</label>
+                        <input id="password" name="password">
+                    </div>
+                    <input type="submit" name="SubmitSmeSignupBtn" value="Register as SME" />
                 </form>
             </div>
         </div>
