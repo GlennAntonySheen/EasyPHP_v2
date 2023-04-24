@@ -213,7 +213,7 @@ class Main extends CI_Controller
           }
 
           echo "<form method=\"post\">
-          <button style=\"position: absolute;top: 145px;left: 150px;z-index:10;\" type=\"submit\" name=\"TogglePrice\">Show/Hide Products Below £100</button>
+          <button style=\"position: absolute;top: 155px;left: 150px;z-index:10;\" type=\"submit\" name=\"TogglePrice\">Show/Hide Products Below £100</button>
         </form>";
 
         

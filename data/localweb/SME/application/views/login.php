@@ -69,7 +69,7 @@ if (isset($_POST['SubmitButton'])) {
         // Storing email in cookies
         setcookie("user", $obj->email, time() + (86400 * 30), "/"); // 86400 = 1 day
         if ($obj->userType == 'admin') {
-            echo '<script>window.location.replace("index.php/main/area");</script>';
+            echo '<script>window.location.replace("index.php/main/localCouncil");</script>';
         } elseif ($obj->userType == 'sme') {
             echo '<script>window.location.replace("index.php/main/product");</script>';
         } elseif ($obj->userType == 'localCouncil') {
