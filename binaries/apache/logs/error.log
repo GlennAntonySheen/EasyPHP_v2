@@ -699,3 +699,5 @@ operable program or batch file.
 [Mon Apr 24 18:27:26.762640 2023] [core:notice] [pid 12188:tid 644] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
 [Mon Apr 24 18:27:26.770619 2023] [mpm_winnt:notice] [pid 12188:tid 644] AH00418: Parent: Created child process 16812
 [Mon Apr 24 18:27:27.215436 2023] [mpm_winnt:notice] [pid 16812:tid 572] AH00354: Child: Starting 64 worker threads.
+[Mon Apr 24 18:46:22.509519 2023] [:error] [pid 16812:tid 1152] [client 127.0.0.1:50848] PHP Fatal error:  Call to undefined function view() in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\controllers\\main.php on line 146, referer: http://localhost:8080/SME/index.php/main/area
+[Mon Apr 24 18:46:23.498787 2023] [:error] [pid 16812:tid 1152] [client 127.0.0.1:50848] PHP Fatal error:  Call to undefined function view() in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\controllers\\main.php on line 146, referer: http://localhost:8080/SME/index.php/main/area

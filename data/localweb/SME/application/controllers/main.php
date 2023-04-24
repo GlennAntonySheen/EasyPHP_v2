@@ -144,7 +144,7 @@ class Main extends CI_Controller
     public function view_vote()
     {
         echo $this->load->view('header');
-        
+
         $sql = "SELECT * FROM vote, product, resident WHERE vote.product_id = product.product_id AND vote.resident_id = resident.resident_id;";
 
         $conn = mysqli_connect('localhost', 'root', '', 'cw2');
@@ -152,11 +152,11 @@ class Main extends CI_Controller
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<div style="margin: 1rem;padding: 1rem;display: grid;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;border-radius: 1rem;">
-                    <span>' . $row['tittle'] .  '. ' . $row['resident_name'] . '</span>
+                    <span>' . $row['tittle'] . '. ' . $row['resident_name'] . '</span>
                     <span>' . $row['email'] . '</span>
-                    <span>' . $row['name'] .  ' (£' . $row['price'] . ')</span>
+                    <span>' . $row['name'] . ' (£' . $row['price'] . ')</span>
                     <span>' . $row['environment'] . '(L:' . $row['length'] . ' x B:' . $row['breadth'] . ' x H:' . $row['height'] . ')</span>
-                    <h3>'. $row['has_voted'] . '</h3>
+                    <h3>' . $row['has_voted'] . '</h3>
                 </div>';
             }
         }
@@ -184,14 +184,33 @@ class Main extends CI_Controller
         $crud->set_rules('breadth', 'Product Breadth', 'required|greater_than[0]');
         $crud->set_rules('length', 'Product Height', 'required|greater_than[0]');
         $crud->set_rules('price', 'Product Price', 'required|greater_than[0]');
-
-        $crud->where('price <=', 200);
+        
+        $maxPrice = $_COOKIE['maxPrice'];
+        $crud->where('price <=', $maxPrice);
 
         // Show vote button only for residents
         $userType = $_COOKIE['userType'];
         if ($userType == 'resident') {
             $crud->add_action('Vote', '', 'main/action_vote_product');
-        }
+
+            if (isset($_POST['TogglePrice'])) {
+                if ($maxPrice == 10000) {      
+                    setcookie('maxPrice', 100, time()+3600, '/');
+                    header("Refresh:0");
+                } else {
+                    setcookie('maxPrice', 10000, time()+3600, '/');
+                    header("Refresh:0");
+                    }
+                }
+            
+                
+          }
+
+          echo "<form method=\"post\">
+          <button style=\"position: absolute;top: 145px;left: 150px;z-index:10;\" type=\"submit\" name=\"TogglePrice\">Toggle Value</button>
+        </form>";
+
+        
 
         $crud->display_as('sme_id', 'Company Name');
         $crud->display_as('price', 'Price (£)');
