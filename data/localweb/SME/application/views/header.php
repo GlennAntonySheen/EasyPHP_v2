@@ -14,7 +14,7 @@
         float: left;
         /* position: fixed; */
         margin: 0 0 1em 0;
-        /* background-color: rgb(7, 193, 193); */
+        background-color: rgb(7, 193, 193);
     }
 
     ul {
@@ -82,11 +82,17 @@ window.onload = function() {
             `<li><a href=''><i class="bi bi-house"></i>Home</a></li>`;
     } else {
         // Show sign out button if user is logged
-        rightNavElement.innerHTML = `<li><a href='main/blank'>Sign out</a></li>`
+        rightNavElement.innerHTML = `<li><a href='../'>Sign out</a></li>`
 
         if (userType === "admin") {
             middleNavElement.innerHTML = middleNavElement.innerHTML + 
             `<li><a href='main/area'><i class="bi bi-geo"></i>Area</a></li>`;
+        } else if (userType === 'sme') {
+            middleNavElement.innerHTML =  
+            `<li><a href='main/voteProducts'><i class="bi bi-geo"></i>Vote Products</a></li>`;
+        } else if (userType === 'resident') {
+            middleNavElement.innerHTML = 
+            `<li><a href='main/voteProducts'><i class="bi bi-geo"></i>Vote Products</a></li>`;
         }
     }
 }
@@ -105,7 +111,7 @@ window.onload = function() {
                 <li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-lightbulb"></i>Product</a></li> -->
             </ul>
             <ul id="rightNav">
-
+            <button onClick="console.log('dfg')">fdg</button>
             </ul>
         </ul>
     </div>

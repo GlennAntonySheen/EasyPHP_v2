@@ -2,6 +2,8 @@
     exit('No direct script access allowed');
 }
 
+// class foo
+// {public $name;}
 class Main extends CI_Controller
 {
 
@@ -73,15 +75,15 @@ class Main extends CI_Controller
 
         $crud->columns('resident_id', 'area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age', 'resident_status');
         $crud->fields('area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age');
-        $crud->field_type('tittle','dropdown', array('1' => 'Mr', '2' => 'Ms','3' => 'other'));
+        $crud->field_type('tittle', 'dropdown', array('1' => 'Mr', '2' => 'Ms', '3' => 'other'));
         $crud->set_relation('area_id', 'area', 'street_name');
 
         $crud->required_fields('area_id', 'tittle', 'resident_name', 'phone_no', 'email', 'age');
         $crud->set_rules('resident_name', 'Resident Name', 'required|min_length[3]');
-        $crud->set_rules('phone_no','phone no', 'required|numeric|min_length[11]|max_length[11]');
-        $crud->set_rules('email','Email', 'required|valid_email');
-        $crud->set_rules('age','Age', 'required|less_than[110]');
-		
+        $crud->set_rules('phone_no', 'phone no', 'required|numeric|min_length[11]|max_length[11]');
+        $crud->set_rules('email', 'Email', 'required|valid_email');
+        $crud->set_rules('age', 'Age', 'required|less_than[110]');
+
         $crud->display_as('area_id', 'Area');
         $crud->display_as('phone_no', 'Phone No(eg:0XXXXXXXXXX)');
 
@@ -93,6 +95,66 @@ class Main extends CI_Controller
     {
         $this->load->view('resident_view.php', $output);
     }
+    public function custom_action($primary_key, $row)
+    {
+        echo "<script>alert('Custom Action was clicked');</script>";
+        die();
+    }
+    public function just_a_test($primary_key, $row)
+    {
+        // echo "<script>alert(" . $primary_key . ");</script>";
+        // return 0;
+    }
+
+    public function action_vote_product($id)
+    {
+        $product_id = $id;
+        // Getting resident ID from cookie
+        $email = $_COOKIE['user'];
+
+        $conn = mysqli_connect('localhost', 'root', '', 'cw2');
+
+        // Getting `resident_id` from email in resident table
+        $query = "SELECT * FROM resident WHERE email = \"" . $email . "\";";
+        $result = mysql_query($query);
+        $obj = mysql_fetch_object($result);
+
+        $resident_id = $obj->resident_id;
+
+        if (isset($_POST['YesButton'])) {
+            $query = "INSERT INTO vote(product_id, resident_id, has_voted) VALUES ($product_id, $resident_id, \"yes\");";
+            echo $query;
+            $conn->query($query);
+
+            header("Location: " . site_url("main/product"));
+        }
+
+        if (isset($_POST['NoButton'])) {
+            $query = "INSERT INTO vote(product_id, resident_id, has_voted) VALUES ($product_id, $resident_id, \"no\");";
+            echo $query;
+            $conn->query($query);
+
+            header("Location: " . site_url("main/product"));
+        }
+
+        
+        echo "<div>
+            <h1>Do you Vote for this product?</h1>
+                <form id=\"loginForm\" action=\"\" method=\"post\">
+                    <input type=\"submit\" name=\"YesButton\" value=\"Yes\" />
+                </form>
+                <form id=\"loginForm\" action=\"\" method=\"post\">
+                    <input type=\"submit\" name=\"NoButton\" value=\"No\" />
+                </form>
+        </div>";
+
+        // echo "<div style='font-size:16px;font-family:Arial'>";
+        // echo "Just a test function for action button smiley and id: <b>".(int)$id."</b><br/>";
+        echo "<a href='" . site_url('main/product') . "'>Go back to example</a>";
+        echo "</div>";
+        die();
+    }
+
     public function product()
     {
         $this->load->view('header');
@@ -101,19 +163,20 @@ class Main extends CI_Controller
         $crud->set_table('product');
         $crud->set_subject('products');
 
-        $crud->columns('product_id', 'sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
-        $crud->fields('sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
-        $crud->field_type('prod_status','dropdown', array('active' => 'Active', 'inactive' => 'Inactive'));
+        // $crud->columns('product_id', 'sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
+        // $crud->fields('sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
+        $crud->field_type('prod_status', 'dropdown', array('active' => 'Active', 'inactive' => 'Inactive'));
         $crud->set_relation('sme_id', 'sme', 'company_name');
-        
-        $crud->required_fields('sme_id','name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
+
+        $crud->required_fields('sme_id', 'name', 'description', 'length', 'breadth', 'height', 'material', 'environment', 'price', 'prod_status');
         $crud->set_rules('description', 'Product Description', 'required|min_length[5]|max_length[250]');
         $crud->set_rules('length', 'Product Length', 'required|greater_than[0]');
         $crud->set_rules('breadth', 'Product Breadth', 'required|greater_than[0]');
         $crud->set_rules('length', 'Product Height', 'required|greater_than[0]');
         $crud->set_rules('price', 'Product Price', 'required|greater_than[0]');
 
-        
+        $crud->add_action('Smileys', 'https://www.grocerycrud.com/v1.x/assets/uploads/general/smiley.png', 'main/action_vote_product');
+
         $crud->display_as('sme_id', 'Company Name');
         $crud->display_as('price', 'Price (£)');
         $crud->display_as('prod_status', 'Product Status');

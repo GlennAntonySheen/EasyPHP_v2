@@ -63,13 +63,16 @@ if (isset($_POST['SubmitButton'])) {
     $result = mysql_query($query);
     $obj = mysql_fetch_object($result, 'foo');
     if ($obj) {
+        // Storing userType in local storage
         echo '<script>localStorage.setItem("userType", "' . $obj->userType . '");</script>';
+        // Storing email in cookies
+        setcookie("user", $obj->email, time() + (86400 * 30), "/"); // 86400 = 1 day
         if ($obj->userType == 'admin') {
             echo '<script>window.location.replace("index.php/main/area");</script>';
         } elseif ($obj->userType == 'sme') {
             echo '<script>window.location.replace("index.php/main/product");</script>';
         } elseif ($obj->userType == 'resident') {
-            echo '<script>window.location.replace("index.php/main/resident");</script>';
+            echo '<script>window.location.replace("index.php/main/product");</script>';
         }
     } else {
         printf("Invalid username or password : ");
@@ -197,7 +200,6 @@ if (isset($_POST['SubmitButton'])) {
 
 <body>
     <div class="contentWrapper">
-
         <div class="introSection">
             <img class="coverImg" src="assets/images/19018.jpg" alt="">
         </div>
@@ -305,4 +307,5 @@ if (mysqli_num_rows($result) > 0) {
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
+localStorage.removeItem('userType')
 </script>

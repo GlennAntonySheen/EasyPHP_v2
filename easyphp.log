@@ -559,3 +559,11 @@
 20/04 15:27:41 EasyPHP Apache stop event: ap16808_shutdown
 20/04 15:27:43 EasyPHP ServerBase::TimerProc : GetProcessVersion Apache (pid: 16808) error 5
 20/04 15:27:49 EasyPHP Apache CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
+21/04 00:23:13 EasyPHP EasyPHP Servers starting
+21/04 00:23:14 EasyPHP Apache CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
+21/04 00:23:14 EasyPHP CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\my.ini" --language=english"
+21/04 00:23:19 EasyPHP EasyPHP Check version
+22/04 23:15:35 EasyPHP EasyPHP Servers starting
+22/04 23:15:36 EasyPHP Apache CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
+22/04 23:15:36 EasyPHP CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\my.ini" --language=english"
+22/04 23:15:41 EasyPHP EasyPHP Check version
