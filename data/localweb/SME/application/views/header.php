@@ -10,10 +10,13 @@
         justify-content: space-between;
         font-family: Arial;
         font-size: 14px;
-        width: 100%;
+        width: calc(100% - 0.5rem);
         float: left;
+        border-radius: 1rem;
         /* position: fixed; */
         margin: 0 0 1em 0;
+        padding: 0.3rem;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         /* background-color: rgb(7, 193, 193); */
     }
 
@@ -79,10 +82,10 @@ window.onload = function() {
     // No one is logged in
     if (userType === null) {
         middleNavElement.innerHTML = middleNavElement.innerHTML +
-            `<li><a href=''><i class="bi bi-house"></i>Home</a></li>`;
+            `<li><a href='<?php echo site_url('') ?>'><i class="bi bi-house"></i>Home</a></li>`;
     } else {
         // Show sign out button if user is logged
-        rightNavElement.innerHTML = rightNavElement.innerHTML + `<li><a href='../'>Sign out</a></li>`
+        rightNavElement.innerHTML = rightNavElement.innerHTML + `<li><a href='../'><i class="bi bi-door-closed"></i>Sign out</a></li>`
 
         if (userType === "admin") {
             middleNavElement.innerHTML =  
@@ -97,7 +100,7 @@ window.onload = function() {
             `<li><a href='<?php echo site_url('main/view_vote') ?>'><i class="bi bi-geo"></i>View Vote</a></li>`;
         } else if (userType === 'resident') {
             middleNavElement.innerHTML = 
-            `<li><a href='<?php echo site_url('main/voteProducts') ?>'><i class="bi bi-geo"></i>Vote Products</a></li>`;
+            `<li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-bag-heart"></i>Vote Products</a></li>`;
         }
     }
 }
@@ -112,7 +115,7 @@ window.onload = function() {
             <ul id="middleNav">
             </ul>
             <ul id="rightNav">
-            <li><a href='<?php echo site_url('main/voteProducts') ?>'><i class="bi bi-journal-medical"></i>Help</a></li>
+            <li><a href='<?php echo site_url('main/help') ?>'><i class="bi bi-journal-medical"></i>Help</a></li>
             <!-- <button onClick="console.log('dfg')">fdg</button> -->
             </ul>
         </ul>

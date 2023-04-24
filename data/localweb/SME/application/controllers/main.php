@@ -22,6 +22,12 @@ class Main extends CI_Controller
         $this->load->view('login');
     }
 
+    public function help()
+    {
+        $this->load->view('header');
+        $this->load->view('help');
+    }
+
     public function area()
     {
         $this->load->view('header');
@@ -207,7 +213,7 @@ class Main extends CI_Controller
           }
 
           echo "<form method=\"post\">
-          <button style=\"position: absolute;top: 145px;left: 150px;z-index:10;\" type=\"submit\" name=\"TogglePrice\">Toggle Value</button>
+          <button style=\"position: absolute;top: 145px;left: 150px;z-index:10;\" type=\"submit\" name=\"TogglePrice\">Show/Hide Products Below £100</button>
         </form>";
 
         
