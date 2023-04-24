@@ -14,7 +14,7 @@
         float: left;
         /* position: fixed; */
         margin: 0 0 1em 0;
-        background-color: rgb(7, 193, 193);
+        /* background-color: rgb(7, 193, 193); */
     }
 
     ul {
@@ -85,14 +85,19 @@ window.onload = function() {
         rightNavElement.innerHTML = `<li><a href='../'>Sign out</a></li>`
 
         if (userType === "admin") {
-            middleNavElement.innerHTML = middleNavElement.innerHTML + 
-            `<li><a href='main/area'><i class="bi bi-geo"></i>Area</a></li>`;
+            middleNavElement.innerHTML =  
+            // `<li><a href='<?php echo site_url('main/localCouncil') ?>'><i class="bi bi-geo"></i>Local Council</a></li>` + 
+            `<li><a href='<?php echo site_url('main/area') ?>'><i class="bi bi-geo"></i>Area</a></li>`;
         } else if (userType === 'sme') {
             middleNavElement.innerHTML =  
-            `<li><a href='main/voteProducts'><i class="bi bi-geo"></i>Vote Products</a></li>`;
+            `<li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-geo"></i>Products</a></li>`;
+        } else if (userType === 'localCouncil') {
+            middleNavElement.innerHTML =  
+            `<li><a href='<?php echo site_url('main/area') ?>'><i class="bi bi-geo"></i>Area</a></li>` +
+            `<li><a href='<?php echo site_url('main/view_vote') ?>'><i class="bi bi-geo"></i>View Vote</a></li>`;
         } else if (userType === 'resident') {
             middleNavElement.innerHTML = 
-            `<li><a href='main/voteProducts'><i class="bi bi-geo"></i>Vote Products</a></li>`;
+            `<li><a href='<?php echo site_url('main/voteProducts') ?>'><i class="bi bi-geo"></i>Vote Products</a></li>`;
         }
     }
 }
@@ -102,11 +107,9 @@ window.onload = function() {
     <div>
         <ul id="nav">
             <ul id="leftNav">
-                <img src="assets/images/logo.PNG" alt="">
+                <img src="https://res.cloudinary.com/dulilyahn/image/upload/v1682350335/logo_tergpo.png" alt="">
             </ul>
             <ul id="middleNav">
-
-
                 <!-- <li><a href='<?php echo site_url('main/resident') ?>'><i class="bi bi-people"></i>Resident</a></li>
                 <li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-lightbulb"></i>Product</a></li> -->
             </ul>

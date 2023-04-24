@@ -65,12 +65,15 @@ if (isset($_POST['SubmitButton'])) {
     if ($obj) {
         // Storing userType in local storage
         echo '<script>localStorage.setItem("userType", "' . $obj->userType . '");</script>';
+        setcookie("userType", $obj->userType, time() + (86400 * 30), "/"); // 86400 = 1 day
         // Storing email in cookies
         setcookie("user", $obj->email, time() + (86400 * 30), "/"); // 86400 = 1 day
         if ($obj->userType == 'admin') {
             echo '<script>window.location.replace("index.php/main/area");</script>';
         } elseif ($obj->userType == 'sme') {
             echo '<script>window.location.replace("index.php/main/product");</script>';
+        } elseif ($obj->userType == 'localCouncil') {
+            echo '<script>window.location.replace("index.php/main/area");</script>';
         } elseif ($obj->userType == 'resident') {
             echo '<script>window.location.replace("index.php/main/product");</script>';
         }

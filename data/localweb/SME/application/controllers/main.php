@@ -95,16 +95,6 @@ class Main extends CI_Controller
     {
         $this->load->view('resident_view.php', $output);
     }
-    public function custom_action($primary_key, $row)
-    {
-        echo "<script>alert('Custom Action was clicked');</script>";
-        die();
-    }
-    public function just_a_test($primary_key, $row)
-    {
-        // echo "<script>alert(" . $primary_key . ");</script>";
-        // return 0;
-    }
 
     public function action_vote_product($id)
     {
@@ -137,7 +127,6 @@ class Main extends CI_Controller
             header("Location: " . site_url("main/product"));
         }
 
-        
         echo "<div>
             <h1>Do you Vote for this product?</h1>
                 <form id=\"loginForm\" action=\"\" method=\"post\">
@@ -147,10 +136,31 @@ class Main extends CI_Controller
                     <input type=\"submit\" name=\"NoButton\" value=\"No\" />
                 </form>
         </div>";
-
-        // echo "<div style='font-size:16px;font-family:Arial'>";
-        // echo "Just a test function for action button smiley and id: <b>".(int)$id."</b><br/>";
         echo "<a href='" . site_url('main/product') . "'>Go back to example</a>";
+        echo "</div>";
+        die();
+    }
+
+    public function view_vote()
+    {
+        echo $this->load->view('header');
+        
+        $sql = "SELECT * FROM vote, product, resident WHERE vote.product_id = product.product_id AND vote.resident_id = resident.resident_id;";
+
+        $conn = mysqli_connect('localhost', 'root', '', 'cw2');
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<div style="margin: 1rem;padding: 1rem;display: grid;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;border-radius: 1rem;">
+                    <span>' . $row['tittle'] .  '. ' . $row['resident_name'] . '</span>
+                    <span>' . $row['email'] . '</span>
+                    <span>' . $row['name'] .  ' (£' . $row['price'] . ')</span>
+                    <span>' . $row['environment'] . '(L:' . $row['length'] . ' x B:' . $row['breadth'] . ' x H:' . $row['height'] . ')</span>
+                    <h3>'. $row['has_voted'] . '</h3>
+                </div>';
+            }
+        }
+        echo "<a href='" . site_url('main/area') . "'>Go back to example</a>";
         echo "</div>";
         die();
     }
@@ -175,7 +185,13 @@ class Main extends CI_Controller
         $crud->set_rules('length', 'Product Height', 'required|greater_than[0]');
         $crud->set_rules('price', 'Product Price', 'required|greater_than[0]');
 
-        $crud->add_action('Smileys', 'https://www.grocerycrud.com/v1.x/assets/uploads/general/smiley.png', 'main/action_vote_product');
+        $crud->where('price <=', 200);
+
+        // Show vote button only for residents
+        $userType = $_COOKIE['userType'];
+        if ($userType == 'resident') {
+            $crud->add_action('Vote', '', 'main/action_vote_product');
+        }
 
         $crud->display_as('sme_id', 'Company Name');
         $crud->display_as('price', 'Price (£)');
@@ -195,6 +211,33 @@ class Main extends CI_Controller
     public function product_output($output = null)
     {
         $this->load->view('product_view.php', $output);
+    }
+    public function localCouncil()
+    {
+        $this->load->view('header');
+        $crud = new grocery_CRUD();
+        $crud->set_theme('datatables');
+        $crud->set_table('local_council');
+        $crud->set_subject('local_council');
+
+        $crud->columns('council_id', 'council_name', 'email', 'phone_no');
+        $crud->fields('council_name', 'email', 'phone_no');
+
+        $crud->required_fields('council_name', 'email', 'phone_no');
+        $crud->set_rules('council_name', 'Council Name', 'required|min_length[3]');
+        $crud->set_rules('phone_no', 'phone no', 'required|numeric|min_length[11]|max_length[11]');
+        $crud->set_rules('email', 'Email', 'required|valid_email');
+
+        // $crud->display_as('area_id', 'Area');
+        $crud->display_as('phone_no', 'Phone No(eg:0XXXXXXXXXX)');
+
+        $output = $crud->render();
+        $this->localCouncil_output($output);
+    }
+
+    public function localCouncil_output($output = null)
+    {
+        $this->load->view('localCouncil_view.php', $output);
     }
 
     public function orderline()
