@@ -31,7 +31,7 @@
 
     #leftNav {
         margin-left: 1rem;
-        background-color: red;
+        /* background-color: red; */
     }
 
     #leftNav,
@@ -82,25 +82,26 @@ window.onload = function() {
     // No one is logged in
     if (userType === null) {
         middleNavElement.innerHTML = middleNavElement.innerHTML +
-            `<li><a href='<?php echo site_url('') ?>'><i class="bi bi-house"></i>Home</a></li>`;
+            `<li><a href='<?php echo site_url('') ?>'><i class="bi bi-house"></i> Home</a></li>`;
     } else {
         // Show sign out button if user is logged
-        rightNavElement.innerHTML = rightNavElement.innerHTML + `<li><a href='<?php echo site_url('') ?>'><i class="bi bi-door-closed"></i>Sign out</a></li>`
+        rightNavElement.innerHTML = rightNavElement.innerHTML + `<li><a href='<?php echo site_url('') ?>'><i class="bi bi-door-closed"></i> Sign out</a></li>`
 
         if (userType === "admin") {
             middleNavElement.innerHTML =  
             // `<li><a href='<?php echo site_url('main/localCouncil') ?>'><i class="bi bi-geo"></i>Local Council</a></li>` + 
-            `<li><a href='<?php echo site_url('main/localCouncil') ?>'><i class="bi bi-buildings"></i>Local Council</a></li>`;
+            `<li><a href='<?php echo site_url('main/localCouncil') ?>'><i class="bi bi-buildings"></i> Local Council</a></li>`;
         } else if (userType === 'sme') {
             middleNavElement.innerHTML =  
-            `<li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-geo"></i>Products</a></li>`;
+            `<li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-lightbulb"></i> Products</a></li>` +
+            `<li><a href='<?php echo site_url('main/view_vote') ?>'><i class="bi bi-eyeglasses"></i> View Vote</a></li>`;
         } else if (userType === 'localCouncil') {
             middleNavElement.innerHTML =  
-            `<li><a href='<?php echo site_url('main/area') ?>'><i class="bi bi-geo"></i>Area</a></li>` +
-            `<li><a href='<?php echo site_url('main/view_vote') ?>'><i class="bi bi-eyeglasses"></i>View Vote</a></li>`;
+            `<li><a href='<?php echo site_url('main/area') ?>'><i class="bi bi-geo"></i> Area</a></li>` +
+            `<li><a href='<?php echo site_url('main/view_vote') ?>'><i class="bi bi-eyeglasses"></i> View Vote</a></li>`;
         } else if (userType === 'resident') {
             middleNavElement.innerHTML = 
-            `<li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-bag-heart"></i>Vote Products</a></li>`;
+            `<li><a href='<?php echo site_url('main/product') ?>'><i class="bi bi-lightbulb"></i> Products</a></li>`;
         }
     }
 }
@@ -110,12 +111,11 @@ window.onload = function() {
     <div>
         <ul id="nav">
             <ul id="leftNav">
-                <img src="https://res.cloudinary.com/dulilyahn/image/upload/v1682350335/logo_tergpo.png" alt="">
+                <img src="https://res.cloudinary.com/dulilyahn/image/upload/v1682350335/logo_tergpo.png" alt="'Smart Counties R Us' Company Logo">
             </ul>
             <ul id="middleNav">
             </ul>
             <ul id="rightNav">
-            <li><a href='<?php echo site_url('main/help') ?>'><i class="bi bi-journal-medical"></i>Help</a></li>
             <!-- <button onClick="console.log('dfg')">fdg</button> -->
             </ul>
         </ul>

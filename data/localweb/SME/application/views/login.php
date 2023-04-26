@@ -56,8 +56,7 @@ if (isset($_POST['SubmitResidentSignupBtn'])) {
 if (isset($_POST['SubmitButton'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $message = "SELECT * FROM login WHERE email = " . '"' . $username . '"' . " AND password = " . '"' . $password . '";';
-
+    
     $conn = mysqli_connect('localhost', 'root', '', 'cw2');
     $query = "SELECT * FROM login WHERE email = " . '"' . $username . '"' . " AND password = " . '"' . $password . '";';
     $result = mysql_query($query);
@@ -68,6 +67,7 @@ if (isset($_POST['SubmitButton'])) {
         setcookie("userType", $obj->userType, time() + (86400 * 30), "/"); // 86400 = 1 day
         // Storing email in cookies
         setcookie("user", $obj->email, time() + (86400 * 30), "/"); // 86400 = 1 day
+        setcookie('maxPrice', 10000, time()+3600, '/');
         if ($obj->userType == 'admin') {
             echo '<script>window.location.replace("index.php/main/localCouncil");</script>';
         } elseif ($obj->userType == 'sme') {
@@ -78,7 +78,7 @@ if (isset($_POST['SubmitButton'])) {
             echo '<script>window.location.replace("index.php/main/product");</script>';
         }
     } else {
-        printf("Invalid username or password : ");
+        $message = "Invalid username or password";
     }
 }
 
@@ -97,7 +97,7 @@ if (isset($_POST['SubmitButton'])) {
     }
 
     .contentWrapper {
-        height: 89vh;
+        height: 87vh;
         display: flex;
         gap: 2rem;
         border-radius: 1rem;
@@ -204,13 +204,12 @@ if (isset($_POST['SubmitButton'])) {
 <body>
     <div class="contentWrapper">
         <div class="introSection">
-            <img class="coverImg" src="assets/images/19018.jpg" alt="">
+            <img class="coverImg" src="assets/images/19018.jpg" alt="Cover image with images of smart gadgets">
         </div>
         <div class="formContainer">
             <div class="loginForm">
                 <h2>Login</h2>
                 <form id="loginForm" action="" method="post">
-                    <?php echo $message; ?>
                     <div class="inputContainer">
                         <label for="username">Username:</label>
                         <input type="text" name="username" id="username" required>
@@ -220,6 +219,7 @@ if (isset($_POST['SubmitButton'])) {
                         <input type="password" name="password" id="password" required>
                     </div>
                     <input type="submit" name="SubmitButton" value="Login" />
+                    <?php echo $message; ?>
                 </form>
             </div>
             <div class="signupForm">

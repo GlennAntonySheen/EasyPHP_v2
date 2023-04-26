@@ -161,7 +161,7 @@ class Main extends CI_Controller
                     <span>' . $row['tittle'] . '. ' . $row['resident_name'] . '</span>
                     <span>' . $row['email'] . '</span>
                     <span>' . $row['name'] . ' (£' . $row['price'] . ')</span>
-                    <span>' . $row['environment'] . '(L:' . $row['length'] . ' x B:' . $row['breadth'] . ' x H:' . $row['height'] . ')</span>
+                    <span>' . $row['environment'] . '  (L:' . $row['length'] . ' x B:' . $row['breadth'] . ' x H:' . $row['height'] . ')</span>
                     <h3>' . $row['has_voted'] . '</h3>
                 </div>';
             }
@@ -179,7 +179,7 @@ class Main extends CI_Controller
         $crud->set_table('product');
         $crud->set_subject('products');
 
-        // $crud->columns('product_id', 'sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
+        $crud->columns('sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price');
         // $crud->fields('sme_id', 'name', 'description', 'length', 'breadth', 'height','material','environment','price','prod_status');
         $crud->field_type('prod_status', 'dropdown', array('active' => 'Active', 'inactive' => 'Inactive'));
         $crud->set_relation('sme_id', 'sme', 'company_name');
@@ -197,8 +197,9 @@ class Main extends CI_Controller
         // Show vote button only for residents
         $userType = $_COOKIE['userType'];
         if ($userType == 'resident') {
+            $crud->unset_add();
             $crud->add_action('Vote', '', 'main/action_vote_product');
-
+        
             if (isset($_POST['TogglePrice'])) {
                 if ($maxPrice == 10000) {      
                     setcookie('maxPrice', 100, time()+3600, '/');
@@ -207,14 +208,12 @@ class Main extends CI_Controller
                     setcookie('maxPrice', 10000, time()+3600, '/');
                     header("Refresh:0");
                     }
-                }
-            
-                
-          }
+                }   
 
           echo "<form method=\"post\">
-          <button style=\"position: absolute;top: 155px;left: 150px;z-index:10;\" type=\"submit\" name=\"TogglePrice\">Show/Hide Products Below £100</button>
-        </form>";
+          <button style=\"height: 30px;position: absolute;top: 150px;left: 9px;z-index:10;\" type=\"submit\" name=\"TogglePrice\"><i class=\"bi bi-filter-circle\"></i> Show/Hide Products Below £100</button>
+        </form>"; 
+    }
 
         
 

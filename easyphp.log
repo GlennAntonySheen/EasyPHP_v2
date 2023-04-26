@@ -581,3 +581,11 @@
 24/04 18:27:26 EasyPHP Apache CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
 24/04 18:27:26 EasyPHP CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\my.ini" --language=english"
 24/04 18:27:31 EasyPHP EasyPHP Check version
+26/04 15:13:50 EasyPHP EasyPHP Servers starting
+26/04 15:13:52 EasyPHP Apache CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
+26/04 15:13:52 EasyPHP CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\my.ini" --language=english"
+26/04 15:13:57 EasyPHP EasyPHP Check version
+26/04 22:19:28 EasyPHP EasyPHP Servers starting
+26/04 22:19:29 EasyPHP Apache CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\apache\bin\eds-httpd.exe"
+26/04 22:19:29 EasyPHP CreateProcess "C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\bin\eds-mysqld.exe --defaults-file="C:\Users\ADMINI~1\Desktop\EASYPH~1\binaries\mysql\my.ini" --language=english"
+26/04 22:19:34 EasyPHP EasyPHP Check version

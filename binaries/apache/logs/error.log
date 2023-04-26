@@ -719,3 +719,15 @@ operable program or batch file.
 [Mon Apr 24 22:51:41.964964 2023] [:error] [pid 16812:tid 1168] [client 127.0.0.1:62218] PHP Fatal error:  Call to undefined function view() in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\views\\header.php on line 118, referer: http://localhost:8080/SME/index.php/main/product
 [Mon Apr 24 22:51:45.978629 2023] [:error] [pid 16812:tid 1168] [client 127.0.0.1:62218] PHP Fatal error:  Call to undefined function view() in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\views\\header.php on line 118
 [Mon Apr 24 22:51:54.996511 2023] [:error] [pid 16812:tid 1168] [client 127.0.0.1:62218] PHP Fatal error:  Call to undefined function view() in C:\\Users\\Administrator\\Desktop\\EasyPHP_v2\\data\\localweb\\SME\\application\\views\\header.php on line 118, referer: http://localhost:8080/
+[Wed Apr 26 15:13:53.132502 2023] [core:warn] [pid 16896:tid 596] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 26 15:13:54.066234 2023] [mpm_winnt:notice] [pid 16896:tid 596] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Wed Apr 26 15:13:54.066234 2023] [mpm_winnt:notice] [pid 16896:tid 596] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Wed Apr 26 15:13:54.066234 2023] [core:notice] [pid 16896:tid 596] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Wed Apr 26 15:13:54.076207 2023] [mpm_winnt:notice] [pid 16896:tid 596] AH00418: Parent: Created child process 2188
+[Wed Apr 26 15:13:54.627711 2023] [mpm_winnt:notice] [pid 2188:tid 620] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 26 22:19:29.908613 2023] [core:warn] [pid 23988:tid 600] AH00098: pid file C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 26 22:19:30.097103 2023] [mpm_winnt:notice] [pid 23988:tid 600] AH00455: Apache/2.4.7 (Win32) PHP/5.5.8 configured -- resuming normal operations
+[Wed Apr 26 22:19:30.097103 2023] [mpm_winnt:notice] [pid 23988:tid 600] AH00456: Apache Lounge VC11 Server built: Nov 21 2013 20:13:01
+[Wed Apr 26 22:19:30.097103 2023] [core:notice] [pid 23988:tid 600] AH00094: Command line: 'C:\\Users\\ADMINI~1\\Desktop\\EASYPH~1\\binaries\\apache\\bin\\eds-httpd.exe -d C:/Users/Administrator/Desktop/EasyPHP_v2/binaries/apache'
+[Wed Apr 26 22:19:30.105089 2023] [mpm_winnt:notice] [pid 23988:tid 600] AH00418: Parent: Created child process 9868
+[Wed Apr 26 22:19:30.539919 2023] [mpm_winnt:notice] [pid 9868:tid 668] AH00354: Child: Starting 64 worker threads.
